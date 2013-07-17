@@ -1,6 +1,7 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
+source $VIMRUNTIME/macros/matchit.vim
 behave mswin
 
 execute pathogen#infect()
@@ -37,3 +38,9 @@ set et!
 set ai!
 colorscheme desert
 filetype plugin indent on
+
+augroup vimrc_autocmds
+  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+  autocmd BufEnter * match OverLength /\%99v.*/
+augroup END
+
