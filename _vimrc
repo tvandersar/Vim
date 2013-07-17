@@ -4,6 +4,8 @@ source $VIMRUNTIME/mswin.vim
 source $VIMRUNTIME/macros/matchit.vim
 behave mswin
 
+autocmd vimenter * NERDTree
+
 execute pathogen#infect()
 call pathogen#incubate()
 
