@@ -78,58 +78,48 @@ set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
 "statusline setup:
-""set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-""set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
-set statusline=%<%f%m%r%{Fenc()}%=%15.(%l,%c%V\ %P%)
-function! Fenc()
-    if &fenc !~ "^$\|utf-8" || &bomb
-        return "[" . &fenc . (&bomb ? "-bom" : "" ) . "]"
-    else
-        return ""
-    endif
-endfunction
 
-"set statusline =%#identifier#
-"set statusline+=[%F] "Full path and filename
+set statusline =%#identifier#
+set statusline+=[%F] "Full path and filename
 "set statusline+=[%t] "tail of the filename
-"set statusline+=%*
-"
-""read only flag
-"set statusline+=%#identifier#
-"set statusline+=%r
-"set statusline+=%*
-"
-""modified flag
-"set statusline+=%#identifier#
-"set statusline+=%m
-"set statusline+=%*
-"
-"set statusline+=%{fugitive#statusline()}
-"
-""display a warning if &et is wrong, or we have mixed-indenting
-"set statusline+=%#error#
-"set statusline+=%{StatuslineTabWarning()}
-"set statusline+=%*
-"set statusline+=%{StatuslineTrailingSpaceWarning()}
-"set statusline+=%{StatuslineLongLineWarning()}
-"set statusline+=%#warningmsg#
-"
-"" disable syntastic on the statusline
-"let g:statline_syntastic = 0
-"
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-""display a warning if &paste is set
-"set statusline+=%#error#
-"set statusline+=%{&paste?'[paste]':''}
-"set statusline+=%*
-"
-"set statusline+=%= "left/right separator
-"set statusline+=%{StatuslineCurrentHighlight()}\ \  "current highlight
-"set statusline+=%c, "cursor column
-"set statusline+=%l/%L "cursor line/total lines
-"set statusline+=\ %P "percent through file
+set statusline+=%*
+
+"read only flag
+set statusline+=%#identifier#
+set statusline+=%r
+set statusline+=%*
+
+"modified flag
+set statusline+=%#identifier#
+set statusline+=%m
+set statusline+=%*
+
+set statusline+=%{fugitive#statusline()}
+
+"display a warning if &et is wrong, or we have mixed-indenting
+set statusline+=%#error#
+set statusline+=%{StatuslineTabWarning()}
+set statusline+=%*
+set statusline+=%{StatuslineTrailingSpaceWarning()}
+set statusline+=%{StatuslineLongLineWarning()}
+set statusline+=%#warningmsg#
+
+" disable syntastic on the statusline
+let g:statline_syntastic = 0
+
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
+
+set statusline+=%= "left/right separator
+set statusline+=%{StatuslineCurrentHighlight()}\ \  "current highlight
+set statusline+=%c, "cursor column
+set statusline+=%l/%L "cursor line/total lines
+set statusline+=\ %P "percent through file
 set laststatus=2
 
 "recalculate the trailing whitespace warning when idle, and after saving
