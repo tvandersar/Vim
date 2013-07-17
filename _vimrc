@@ -77,7 +77,7 @@ set wildmode=list:longest "make cmdline tab completion similar to bash
 set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
-"statusline setup
+"statusline setup:
 set statusline =%#identifier#
 set statusline+=[%t] "tail of the filename
 set statusline+=%*
