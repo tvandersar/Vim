@@ -35,4 +35,5 @@ autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 set wrap!
 set et!
 set ai!
+colorscheme desert
 filetype plugin indent on
