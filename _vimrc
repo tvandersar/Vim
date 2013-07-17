@@ -36,7 +36,10 @@ autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 set wrap!
 set et!
 set ai!
+" set colorcolumn=+1
+
 colorscheme desert
+
 filetype plugin indent on
 
 augroup vimrc_autocmds
