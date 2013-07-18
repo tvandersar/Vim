@@ -4,10 +4,26 @@ source $VIMRUNTIME/mswin.vim
 source $VIMRUNTIME/macros/matchit.vim
 behave mswin
 
+cd C:\
+
 autocmd vimenter * NERDTree
+
+"nerdtree settings
+let g:NERDTreeMouseMode = 2
+let g:NERDTreeWinSize = 40
 
 execute pathogen#infect()
 call pathogen#incubate()
+
+" Set favorite color scheme:
+"let g:solarized_termcolors=0    "default value is 16
+"let g:solarized_contrast="high"    "default value is normal
+"let g:solarized_visibility="high"    "default value is normal
+syntax enable
+set background=dark
+"colorscheme solarized
+colorscheme desert
+"colorscheme codeschool
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -64,9 +80,6 @@ set nofoldenable "dont fold by default
 set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
-
-" Set favorite color scheme:
-colorscheme desert
 
 "load ftplugins and indent files
 filetype plugin indent on
@@ -244,10 +257,6 @@ function! s:Median(nums)
         return (nums[l/2] + nums[(l/2)-1]) / 2
     endif
 endfunction
-
-"nerdtree settings
-let g:NERDTreeMouseMode = 2
-let g:NERDTreeWinSize = 40
 
 "explorer mappings
 nnoremap <f1> :BufExplorer<cr>
