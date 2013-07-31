@@ -4,7 +4,7 @@ source $VIMRUNTIME/mswin.vim
 source $VIMRUNTIME/macros/matchit.vim
 behave mswin
 
-cd C:\
+cd X:\
 
 autocmd vimenter * NERDTree
 
@@ -69,7 +69,9 @@ set number "show line numbers
 
 "display tabs and trailing spaces
 set list
-set listchars=tab:?·,trail:·,nbsp:·
+set listchars=nbsp:·
+"set listchars=tab:?·,trail:·,nbsp:·
+
 
 "folding settings
 set foldmethod=indent "fold based on indent
