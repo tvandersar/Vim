@@ -4,7 +4,7 @@ source $VIMRUNTIME/mswin.vim
 source $VIMRUNTIME/macros/matchit.vim
 behave mswin
 
-cd X:\
+cd L:\
 
 autocmd vimenter * NERDTree
 
